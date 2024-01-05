@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'itinerary.dart';
-import 'countries.dart';
-import 'purposes.dart';
-import 'trip.dart';
+import 'package:absence_watch/models/itinerary.dart';
+import 'package:absence_watch/models/countries.dart';
+import 'package:absence_watch/models/purposes.dart';
+import 'package:absence_watch/models/trip.dart';
 
 class AddNewTripPage extends StatefulWidget {
   const AddNewTripPage({Key? key}) : super(key: key);

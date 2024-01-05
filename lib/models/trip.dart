@@ -1,4 +1,4 @@
-import 'package:absence_watch/itinerary.dart';
+import 'package:absence_watch/models/itinerary.dart';
 
 class Trip {
   DateTime departureDate;

@@ -1,7 +1,22 @@
-import 'package:absence_watch/page.dart';
+import 'package:absence_watch/pages/page.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
+
+  // Use Firestore emulator in debug mode
+  if (kDebugMode) {
+    FirebaseFirestore.instance.settings = const Settings(
+      host: 'localhost:8080',
+      sslEnabled: false,
+      persistenceEnabled: false,
+    );
+  }
+
   runApp(const AbsenceWatchApp());
 }
 
