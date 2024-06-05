@@ -110,8 +110,8 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
     }
     setState(() {
       Set<DateTime> absenceDates = widget.profile.absenceDates();
-      absenceDays1Y = calculateAbsenceDays(absenceDates, 1);
-      absenceDays5Y = calculateAbsenceDays(absenceDates, 5);
+      absenceDays1Y = calculateAbsenceDays(absenceDates, trip, 1);
+      absenceDays5Y = calculateAbsenceDays(absenceDates, trip, 5);
     });
   }
 
@@ -236,29 +236,6 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
         );
       }
     }
-  }
-
-  int calculateAbsenceDays(Set<DateTime> absenceDates, int years) {
-    DateTime nYearAgo = trip.arrivalDate.subtract(Duration(days: 365 * years));
-    DateTime nYearLater = trip.departureDate.add(Duration(days: 365 * years));
-    int totalAbsenceDays = 0;
-    DateTime startDate = nYearAgo.subtract(const Duration(days: 1));
-    DateTime cutoffDate = trip.arrivalDate.subtract(const Duration(days: 1));
-
-    while (!cutoffDate.isAfter(nYearLater)) {
-      // Increment cutoffDate for the next day
-      startDate = startDate.add(const Duration(days: 1));
-      cutoffDate = cutoffDate.add(const Duration(days: 1));
-
-      // Efficiently filter absence dates within the range
-      final absenceDaysInRange = absenceDates.where((absenceDate) =>
-          absenceDate.isAfter(startDate) && absenceDate.isBefore(cutoffDate));
-
-      // Add the number of absence days in this range to the total
-      totalAbsenceDays = max(totalAbsenceDays, absenceDaysInRange.length);
-    }
-
-    return totalAbsenceDays + trip.totalAbsenceDays;
   }
 
   @override

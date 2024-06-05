@@ -1,3 +1,4 @@
+import 'package:absence_watch/models/trip.dart';
 import 'package:flutter/material.dart';
 
 import '../models/itinerary.dart';
@@ -79,6 +80,29 @@ Icon getRAGIcon(int? value, int amberThreshold, int redThreshold) {
       size: 24.0,
     );
   }
+}
+
+int calculateAbsenceDays(Set<DateTime> absenceDates, Trip trip, int years) {
+  DateTime nYearAgo = trip.arrivalDate.subtract(Duration(days: 365 * years));
+  DateTime nYearLater = trip.departureDate.add(Duration(days: 365 * years));
+  int totalAbsenceDays = 0;
+  DateTime startDate = nYearAgo.subtract(const Duration(days: 1));
+  DateTime cutoffDate = trip.arrivalDate.subtract(const Duration(days: 1));
+
+  while (!cutoffDate.isAfter(nYearLater)) {
+    // Increment cutoffDate for the next day
+    startDate = startDate.add(const Duration(days: 1));
+    cutoffDate = cutoffDate.add(const Duration(days: 1));
+
+    // Efficiently filter absence dates within the range
+    final absenceDaysInRange = absenceDates.where((absenceDate) =>
+        absenceDate.isAfter(startDate) && absenceDate.isBefore(cutoffDate));
+
+    // Add the number of absence days in this range to the total
+    totalAbsenceDays = max(totalAbsenceDays, absenceDaysInRange.length);
+  }
+
+  return totalAbsenceDays + trip.totalAbsenceDays;
 }
 
 // int calculateMaxRollingTotalAbsenceDays(List<Trip> trips) {
