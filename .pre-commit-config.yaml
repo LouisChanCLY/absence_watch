@@ -1,0 +1,28 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-yaml
+    - id: check-added-large-files
+
+- repo: local
+  hooks:
+    - id: dart-format
+      name: dart format
+      entry: dart format .
+      language: system
+      types: [dart]
+
+    - id: dart-analyze
+      name: dart analyze
+      entry: dart analyze
+      language: system
+      types: [dart]
+
+    - id: flutter-test
+      name: flutter test
+      entry: flutter test
+      language: system
+      types: [dart]
