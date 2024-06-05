@@ -1,20 +1,17 @@
-import 'dart:math';
-
 import 'package:absence_watch/pages/trips.dart';
 import 'package:country_pickers/country.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:intl/intl.dart';
+import 'package:absence_watch/widgets/absence_days_card.dart';
 import 'package:provider/provider.dart';
-
-import '../common/theme.dart';
-import '../common/util.dart';
-import '../models/itinerary.dart';
-import '../models/profile.dart';
-import '../models/trip.dart';
-import '../widgets/edit_itinerary_dialog.dart';
-import 'trip_summary.dart';
-import '../widgets/itinerary_card.dart';
+import 'package:absence_watch/common/theme.dart';
+import 'package:absence_watch/common/util.dart';
+import 'package:absence_watch/models/itinerary.dart';
+import 'package:absence_watch/models/profile.dart';
+import 'package:absence_watch/models/trip.dart';
+import 'package:absence_watch/widgets/edit_itinerary_dialog.dart';
+import 'package:absence_watch/pages/trip_summary.dart';
+import 'package:absence_watch/widgets/itinerary_card.dart';
 
 class TripDetailsPage extends StatefulWidget {
   final Profile profile;
@@ -240,9 +237,6 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    int totalAbsenceDays = trip.totalAbsenceDays;
-
-    DateTime today = DateTime.now();
     DateTime? arrivalDate = trip.itineraries.isNotEmpty
         ? trip.itineraries.last.arrivalDate
         : DateTime.now();
@@ -274,98 +268,11 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
             const SizedBox(
               height: 24.0,
             ),
-            Container(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24.0),
-              decoration: BoxDecoration(
-                  color: primaryElementBackgroundColor,
-                  border: Border.symmetric(
-                    horizontal: primaryElementBorderSide,
-                  )),
-              child: Column(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      const Expanded(
-                        child: Text(
-                          'Total Absence Days',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        '$totalAbsenceDays',
-                        style: TextStyle(
-                          color: secondaryTextColor,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8.0,
-                  ),
-                  if (totalAbsenceDays > 0)
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            getRAGIcon(
-                                absenceDays1Y,
-                                (arrivalDate.isAfter(today))
-                                    ? absenceBudget1Y
-                                    : absenceBudget12M,
-                                absenceBudget12M),
-                            const SizedBox(
-                              width: 8.0,
-                            ),
-                            Text(
-                                "Rolling 12-Month ($absenceDays1Y / $absenceBudget12M)"),
-                          ],
-                        ),
-                        if ((absenceDays1Y >= absenceBudget1Y) &&
-                            (absenceDays1Y < absenceBudget12M) &&
-                            (arrivalDate.isAfter(today)))
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              top: 8.0,
-                            ),
-                            child: Text(
-                              "You will be exceeding the 1 year threshold if you are planning to apply for citizenship after the trip.",
-                              style: subtitleStyle,
-                            ),
-                          ),
-                        const SizedBox(
-                          height: 8.0,
-                        ),
-                        Row(
-                          children: [
-                            getRAGIcon(absenceDays5Y, absenceBudget5Y,
-                                absenceBudget5Y),
-                            const SizedBox(
-                              width: 8.0,
-                            ),
-                            Text(
-                                "Rolling 5-Year ($absenceDays5Y / $absenceBudget5Y)"),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 8.0,
-                        ),
-                        Text(
-                          'Calculation based on your travel history, future trip(s) and the current trip ending on ${DateFormat.yMMMd("en_GB").format(arrivalDate)}',
-                          style: subtitleStyle,
-                        ),
-                      ],
-                    ),
-                ],
-              ),
-            ),
+            AbsenceDayesCard(
+                tripTotalAbsenceDays: trip.totalAbsenceDays,
+                tripArrivalDate: arrivalDate,
+                absenceDays1Y: absenceDays1Y,
+                absenceDays5Y: absenceDays5Y),
             const SizedBox(
               height: 8.0,
             ),

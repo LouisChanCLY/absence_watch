@@ -2,14 +2,12 @@ import 'package:absence_watch/common/theme.dart';
 import 'package:absence_watch/common/util.dart';
 import 'package:absence_watch/models/itinerary.dart';
 import 'package:absence_watch/pages/trips.dart';
+import 'package:absence_watch/widgets/absence_days_card.dart';
 import 'package:absence_watch/widgets/itinerary_card.dart';
 import 'package:flutter/material.dart';
-
 import 'package:absence_watch/models/profile.dart';
 import 'package:absence_watch/models/trip.dart';
 import 'package:absence_watch/pages/trip_details.dart';
-import 'package:intl/intl.dart';
-// import 'old_history.dart';
 
 class TripSummaryPage extends StatelessWidget {
   final Trip trip;
@@ -72,98 +70,11 @@ class TripSummaryPage extends StatelessWidget {
             const SizedBox(
               height: 24.0,
             ),
-            Container(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24.0),
-              decoration: BoxDecoration(
-                  color: primaryElementBackgroundColor,
-                  border: Border.symmetric(
-                    horizontal: primaryElementBorderSide,
-                  )),
-              child: Column(
-                children: [
-                  Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        const Expanded(
-                          child: Text(
-                            'Total Absence Days',
-                            style: TextStyle(
-                              // color: primaryTextColor,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          '${trip.totalAbsenceDays}',
-                          style: TextStyle(
-                            color: secondaryTextColor,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ]),
-                  const SizedBox(
-                    height: 8.0,
-                  ),
-                  if (trip.totalAbsenceDays > 0)
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            getRAGIcon(
-                                absenceDays1Y,
-                                (trip.arrivalDate.isAfter(today))
-                                    ? absenceBudget1Y
-                                    : absenceBudget12M,
-                                absenceBudget12M),
-                            const SizedBox(
-                              width: 8.0,
-                            ),
-                            Text(
-                                "Rolling 12-Month ($absenceDays1Y / $absenceBudget12M)"),
-                          ],
-                        ),
-                        if ((absenceDays1Y >= absenceBudget1Y) &&
-                            (absenceDays1Y < absenceBudget12M) &&
-                            (trip.arrivalDate.isAfter(today)))
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              top: 8.0,
-                            ),
-                            child: Text(
-                              "You will be exceeding the 1 year threshold if you are planning to apply for citizenship after the trip.",
-                              style: subtitleStyle,
-                            ),
-                          ),
-                        const SizedBox(
-                          height: 8.0,
-                        ),
-                        Row(
-                          children: [
-                            getRAGIcon(absenceDays5Y, absenceBudget5Y,
-                                absenceBudget5Y),
-                            const SizedBox(
-                              width: 8.0,
-                            ),
-                            Text(
-                                "Rolling 5-Year ($absenceDays5Y / $absenceBudget5Y)"),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 8.0,
-                        ),
-                        Text(
-                          'Calculation based on your travel history, future trip(s) and the current trip ending on ${DateFormat.yMMMd("en_GB").format(trip.arrivalDate)}',
-                          style: subtitleStyle,
-                        ),
-                      ],
-                    ),
-                ],
-              ),
-            ),
+            AbsenceDayesCard(
+                tripTotalAbsenceDays: trip.totalAbsenceDays,
+                tripArrivalDate: trip.arrivalDate,
+                absenceDays1Y: absenceDays1Y,
+                absenceDays5Y: absenceDays5Y),
             const SizedBox(
               height: 8.0,
             ),
