@@ -36,7 +36,6 @@ class TripSummaryPage extends StatelessWidget {
     final Set<DateTime> absenceDates = profile.absenceDates();
     int absenceDays1Y = calculateAbsenceDays(absenceDates, trip, 1);
     int absenceDays5Y = calculateAbsenceDays(absenceDates, trip, 5);
-    DateTime today = DateTime.now();
     return Scaffold(
       backgroundColor: pageBackgroundColor,
       appBar: AppBar(
