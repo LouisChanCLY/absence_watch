@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "919574811604",
+    "project_id": "absence-watch",
+    "storage_bucket": "absence-watch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919574811604:android:d52d8e8b6ec53e735ebc41",
+        "android_client_info": {
+          "package_name": "com.example.absence_watch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_j4dY8PQ2jKsmMVw45dn4S4uBKeMD3MQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
