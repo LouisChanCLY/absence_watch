@@ -48,7 +48,7 @@ class TripSummaryPage extends StatelessWidget {
           onPressed: () =>
               Navigator.of(context).popUntil((route) => route.isFirst),
         ),
-        title: const Text('Trip Details'),
+        title: const Text('Trip Summary'),
         actions: [
           IconButton(
             icon: const Icon(Icons.edit),
