@@ -101,6 +101,11 @@ class AbsenceDayesCard extends StatelessWidget {
                   style: subtitleStyle,
                 ),
               ],
+            )
+          else
+            Text(
+              'This trip does not have any full days (Absence Days) outside the UK.',
+              style: subtitleStyle,
             ),
         ],
       ),
