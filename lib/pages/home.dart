@@ -106,8 +106,8 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              getRAGIcon(
-                                  profile.totalAbsenceDaysIn1Year, 90, 180),
+                              getRAGIcon(profile.totalAbsenceDaysIn1Year,
+                                  absenceBudget1Y, absenceBudget12M),
                               const SizedBox(
                                 width: 16.0,
                               ),
@@ -144,8 +144,8 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              getRAGIcon(
-                                  profile.totalAbsenceDaysIn5Years, 360, 450),
+                              getRAGIcon(profile.totalAbsenceDaysIn5Years,
+                                  absenceBudget5Y, absenceBudget5Y),
                               const SizedBox(
                                 width: 16.0,
                               ),
@@ -182,8 +182,8 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              getRAGIcon(
-                                  profile.totalAbsenceDaysIn5Years, 360, 450),
+                              getRAGIcon(profile.totalAbsenceDaysIn1Year,
+                                  absenceBudget12M, absenceBudget1Y),
                               const SizedBox(
                                 width: 16.0,
                               ),

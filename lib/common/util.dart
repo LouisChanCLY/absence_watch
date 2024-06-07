@@ -12,7 +12,7 @@ final Country ukCountry = CountryPickerUtils.getCountryByIsoCode('GB');
 
 const int absenceBudget12M = 180;
 const int absenceBudget5Y = 450;
-const int absenceBudget1Y = 1;
+const int absenceBudget1Y = 90;
 
 String formatDate(DateTime? date) {
   if (date == null) return 'N/A';
