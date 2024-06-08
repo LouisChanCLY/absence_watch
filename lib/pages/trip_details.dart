@@ -33,6 +33,7 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
   late Trip trip;
   Country lastArrivalCountry = ukCountry;
   DateTime? lastArrivalDate;
+  late Set<DateTime> originalTripAbsenceDates;
   List<DateTime> blackoutDates = [];
   int absenceDays1Y = 0;
   int absenceDays5Y = 0;
@@ -58,6 +59,7 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
 
   void _initializeTrip() {
     trip = widget.trip ?? Trip(userId: widget.profile.userId, itineraries: []);
+    originalTripAbsenceDates = trip.absenceDates;
     lastArrivalCountry = ukCountry;
     lastArrivalDate = DateTime(2000, 1, 1);
     blackoutDates = _generateBlackoutDates();
@@ -106,7 +108,8 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
       return;
     }
     setState(() {
-      Set<DateTime> absenceDates = widget.profile.absenceDates();
+      Set<DateTime> absenceDates =
+          widget.profile.absenceDates().difference(originalTripAbsenceDates);
       absenceDays1Y = calculateAbsenceDays(absenceDates, trip, 1);
       absenceDays5Y = calculateAbsenceDays(absenceDates, trip, 5);
     });
