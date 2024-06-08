@@ -12,6 +12,8 @@ import '../common/theme.dart';
 import '../models/profile.dart';
 
 class TripsPage extends StatefulWidget {
+  const TripsPage({super.key});
+
   @override
   _TripsPageState createState() => _TripsPageState();
 }
@@ -70,7 +72,7 @@ class _TripsPageState extends State<TripsPage> {
               : [
                   ...profile.trips.map((trip) {
                     return TripCard(trip: trip); // Create a widget instance
-                  }).toList(),
+                  }),
                 ],
         ),
       ),

@@ -1,6 +1,9 @@
 // Dart imports:
 import 'dart:math';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+
 // Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -62,7 +65,7 @@ class TripHistory {
       absenceCounter = max(0, (absenceCounter - gap)) + trip.totalAbsenceDays;
       maxAbsences.add(absenceCounter);
     }
-    print(maxAbsences);
+    debugPrint(maxAbsences as String?);
     return maxAbsences.reduce(max);
   }
 

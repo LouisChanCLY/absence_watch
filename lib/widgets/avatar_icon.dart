@@ -19,7 +19,7 @@ class ProfileAvatar extends StatelessWidget {
     }
 
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: CircleAvatar(
         backgroundImage: NetworkImage(
           profileImageUrl!,

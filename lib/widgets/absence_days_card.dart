@@ -46,7 +46,7 @@ class AbsenceDayesCard extends StatelessWidget {
               ),
             ),
             Text(
-              '${tripTotalAbsenceDays}',
+              '$tripTotalAbsenceDays',
               style: TextStyle(
                 color: secondaryTextColor,
                 fontSize: 20,

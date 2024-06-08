@@ -224,7 +224,7 @@ class Profile with ChangeNotifier {
       await docRef.set(toMap());
       return;
     }
-    print("Profile $userId exists already!");
+    debugPrint("Profile $userId exists already!");
     return;
   }
 
@@ -245,13 +245,13 @@ class Profile with ChangeNotifier {
   }
 
   static Future<Profile> getProfileById(String userId) async {
-    print("Getting profile for $userId");
+    debugPrint("Getting profile for $userId");
     DocumentReference docRef =
         FirebaseFirestore.instance.collection('profiles').doc(userId);
     DocumentSnapshot docSnap = await docRef.get();
 
     if (!docSnap.exists) {
-      print("Creating profile for $userId");
+      debugPrint("Creating profile for $userId");
       Profile profile = Profile(
           userId: userId,
           totalAbsenceDays: 0,

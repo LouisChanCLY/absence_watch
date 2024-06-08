@@ -257,7 +257,7 @@ class SignupPageState extends State<SignupPage> {
                       }
                     } catch (e) {
                       // Handle other potential errors
-                      print(e);
+                      debugPrint(e as String?);
                     }
                   }
                 }, // Add your sign up logic here

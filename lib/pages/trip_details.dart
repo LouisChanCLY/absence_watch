@@ -58,7 +58,7 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
   }
 
   void _redirectToLogin() {
-    print('User not logged in. Redirecting to login page...');
+    debugPrint('User not logged in. Redirecting to login page...');
     Navigator.of(context).pushReplacementNamed('/login');
   }
 
@@ -170,7 +170,7 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
         int index = entry.key + 1;
         Itinerary itinerary = entry.value;
         return ItineraryCard(
-          itinerary_order: index,
+          itineraryOrder: index,
           itinerary: itinerary,
           isEditable: true,
           onEdit: (Itinerary itin) => showModalBottomSheet<Itinerary>(
@@ -191,16 +191,6 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
           }),
         );
       }).toList(),
-    );
-  }
-
-  Widget _buildActionButtons() {
-    return Center(
-      child: ActionChip(
-        avatar: Icon(trip.isValid ? Icons.check : Icons.add),
-        label: Text(trip.isValid ? 'Save trip' : 'Add an itinerary'),
-        onPressed: trip.isValid ? _saveTrip : () => _showEditItineraryDialog(),
-      ),
     );
   }
 
@@ -232,7 +222,7 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
         await profile.removeTrip(trip);
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => TripsPage(),
+            builder: (context) => const TripsPage(),
           ),
         );
       } catch (e) {

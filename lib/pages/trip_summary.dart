@@ -16,8 +16,7 @@ class TripSummaryPage extends StatelessWidget {
   final Trip trip;
   final Profile profile;
 
-  const TripSummaryPage({Key? key, required this.profile, required this.trip})
-      : super(key: key);
+  const TripSummaryPage({super.key, required this.profile, required this.trip});
 
   Widget _buildItineraryList() {
     return Column(
@@ -25,7 +24,7 @@ class TripSummaryPage extends StatelessWidget {
         int index = entry.key + 1;
         Itinerary itinerary = entry.value;
         return ItineraryCard(
-          itinerary_order: index,
+          itineraryOrder: index,
           itinerary: itinerary,
           isEditable: false,
           onEdit: (Itinerary itin) => null,
@@ -90,7 +89,7 @@ class TripSummaryPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => TripsPage(),
+                        builder: (context) => const TripsPage(),
                       ),
                     );
                   },

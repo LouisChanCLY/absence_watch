@@ -11,14 +11,14 @@ import '../models/itinerary.dart';
 // import '../common/util.dart';
 
 class ItineraryCard extends StatelessWidget {
-  final int itinerary_order;
+  final int itineraryOrder;
   final Itinerary itinerary;
   final bool isEditable;
   final Function(Itinerary itinerary)? onEdit;
 
   const ItineraryCard({
     super.key,
-    required this.itinerary_order,
+    required this.itineraryOrder,
     required this.itinerary,
     this.isEditable = false,
     this.onEdit,
@@ -27,7 +27,7 @@ class ItineraryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Column(
         children: [
           Container(
@@ -42,14 +42,14 @@ class ItineraryCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    "Itinerary ${this.itinerary_order}",
+                    "Itinerary $itineraryOrder",
                     style: const TextStyle(
                         fontSize: 20.0, fontWeight: FontWeight.w600),
                   ),
                 ),
                 if (isEditable)
                   IconButton(
-                    icon: Icon(Icons.edit),
+                    icon: const Icon(Icons.edit),
                     onPressed: () {
                       if (onEdit != null) {
                         onEdit!(itinerary); // Call the onEdit function

@@ -1,7 +1,5 @@
 // Flutter imports:
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // Package imports:
 import 'package:country_pickers/countries.dart';
@@ -264,7 +262,7 @@ class _EditItineraryDialogState extends State<EditItineraryDialog> {
                 ],
               ),
             );
-          }).toList(),
+          }),
         ],
         onChanged: (String? newValue) {
           if (newValue != null) {
@@ -310,7 +308,7 @@ class _EditItineraryDialogState extends State<EditItineraryDialog> {
       formFieldWidget: TextFormField(
         decoration: _buildInputDecoration(
           label: label,
-          suffixIcon: Icon(Icons.calendar_month_rounded),
+          suffixIcon: const Icon(Icons.calendar_month_rounded),
         ),
         controller: controller,
         readOnly: true,
@@ -324,7 +322,7 @@ class _EditItineraryDialogState extends State<EditItineraryDialog> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(24.0),
+      padding: const EdgeInsets.all(24.0),
       child: Form(
         key: _formKey,
         child: Column(

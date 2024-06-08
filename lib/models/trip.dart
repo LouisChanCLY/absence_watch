@@ -2,6 +2,9 @@
 import 'dart:async';
 import 'dart:math';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+
 // Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:country_pickers/country.dart';
@@ -127,7 +130,7 @@ class Trip {
   }
 
   Future<String> upload() async {
-    print("Uploading trip");
+    debugPrint("Uploading trip");
     CollectionReference trips = FirebaseFirestore.instance.collection('trips');
 
     // Add all itineraries first and collect their IDs
@@ -142,11 +145,11 @@ class Trip {
     try {
       // Add the Trip to Firestore
       DocumentReference docRef = await trips.add(tripData);
-      print('Trip added successfully with ID: ${docRef.id}');
+      debugPrint('Trip added successfully with ID: ${docRef.id}');
       id = docRef.id;
       return docRef.id;
     } catch (e) {
-      print('Error adding trip: $e');
+      debugPrint('Error adding trip: $e');
       rethrow;
     }
   }

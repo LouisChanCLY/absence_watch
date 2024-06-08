@@ -1,3 +1,6 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
 // Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:country_pickers/country.dart';
@@ -66,7 +69,7 @@ class Itinerary {
   }
 
   Future<String> upload() async {
-    print("Uploading itinerary");
+    debugPrint("Uploading itinerary");
     CollectionReference itineraryCollection =
         FirebaseFirestore.instance.collection('itineraries');
 
@@ -76,12 +79,12 @@ class Itinerary {
 
       // Add the Itinerary to Firestore
       DocumentReference docRef = await itineraryCollection.add(itineraryData);
-      print('Itinerary added successfully with ID: ${docRef.id}');
+      debugPrint('Itinerary added successfully with ID: ${docRef.id}');
       id = docRef.id;
 
       return docRef.id; // Return the ID of the newly added Itinerary
     } catch (e) {
-      print('Error adding itinerary: $e');
+      debugPrint('Error adding itinerary: $e');
       rethrow; // Re-throw the error for further handling if necessary
     }
   }

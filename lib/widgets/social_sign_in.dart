@@ -45,7 +45,7 @@ Future<void> _signInWithGoogle(
       }
     }
   } catch (e) {
-    print('Error signing in with Google: $e');
+    debugPrint('Error signing in with Google: $e');
     // Handle errors (e.g., show a SnackBar or dialog to the user)
   }
 }
@@ -71,7 +71,7 @@ class SocialSignInButtonBar extends StatelessWidget {
               try {
                 await _signInWithGoogle(context, redirectPage);
               } catch (e) {
-                print('Error signing in with Google: $e');
+                debugPrint('Error signing in with Google: $e');
                 // Handle potential errors
               }
             },

@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         leading: ProfileAvatar(
           profileImageUrl: profile.profileImageUrl,
         ),
-        title: Text("Home"),
+        title: const Text("Home"),
         actions: [
           IconButton(
             icon: const Icon(Icons.exit_to_app),
