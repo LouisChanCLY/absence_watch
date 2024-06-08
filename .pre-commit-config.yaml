@@ -7,6 +7,14 @@ repos:
     - id: check-yaml
     - id: check-added-large-files
 
+- repo: https://github.com/fluttercommunity/import_sorter
+  rev: 'master'
+  hooks:
+    - id: dart-import-sorter
+      entry: dart pub run import_sorter:main
+      language: system
+      types: [dart]
+
 - repo: local
   hooks:
     - id: dart-format
