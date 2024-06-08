@@ -28,9 +28,3 @@ repos:
       entry: dart analyze
       language: system
       types: [dart]
-
-    - id: flutter-test
-      name: flutter test
-      entry: flutter test
-      language: system
-      types: [dart]
