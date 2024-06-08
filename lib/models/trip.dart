@@ -1,9 +1,12 @@
+// Dart imports:
 import 'dart:async';
 import 'dart:math';
 
+// Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:country_pickers/country.dart';
 
+// Project imports:
 import '../common/util.dart';
 import 'itinerary.dart';
 

@@ -1,7 +1,12 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:intl/intl.dart';
+
+// Project imports:
 import 'package:absence_watch/common/theme.dart';
 import 'package:absence_watch/common/util.dart';
-import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class AbsenceDayesCard extends StatelessWidget {
   final int tripTotalAbsenceDays;

@@ -1,7 +1,12 @@
-import 'package:absence_watch/pages/trip_summary.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+
+// Project imports:
+import 'package:absence_watch/pages/trip_summary.dart';
 import '../models/profile.dart';
 import '../models/trip.dart';
 

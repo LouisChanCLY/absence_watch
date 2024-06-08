@@ -1,13 +1,16 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:absence_watch/common/theme.dart';
 import 'package:absence_watch/common/util.dart';
 import 'package:absence_watch/models/itinerary.dart';
-import 'package:absence_watch/pages/trips.dart';
-import 'package:absence_watch/widgets/absence_days_card.dart';
-import 'package:absence_watch/widgets/itinerary_card.dart';
-import 'package:flutter/material.dart';
 import 'package:absence_watch/models/profile.dart';
 import 'package:absence_watch/models/trip.dart';
 import 'package:absence_watch/pages/trip_details.dart';
+import 'package:absence_watch/pages/trips.dart';
+import 'package:absence_watch/widgets/absence_days_card.dart';
+import 'package:absence_watch/widgets/itinerary_card.dart';
 
 class TripSummaryPage extends StatelessWidget {
   final Trip trip;

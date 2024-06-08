@@ -1,15 +1,19 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:provider/provider.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+
+// Project imports:
+import 'package:absence_watch/common/theme.dart';
 import 'package:absence_watch/common/util.dart';
+import 'package:absence_watch/models/profile.dart';
 import 'package:absence_watch/pages/trip_details.dart';
 import 'package:absence_watch/widgets/avatar_icon.dart';
 import 'package:absence_watch/widgets/bottom_navigator.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:syncfusion_flutter_datepicker/datepicker.dart';
-import 'package:intl/date_symbol_data_local.dart';
-
-import 'package:absence_watch/common/theme.dart';
-import 'package:absence_watch/models/profile.dart';
 import 'login.dart';
 
 class HomePage extends StatefulWidget {

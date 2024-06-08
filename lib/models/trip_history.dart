@@ -1,7 +1,11 @@
+// Dart imports:
+import 'dart:math';
+
+// Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+// Project imports:
 import 'trip.dart';
-import 'dart:math';
 
 class TripHistory {
   List<Trip> trips;

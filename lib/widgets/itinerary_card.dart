@@ -1,8 +1,14 @@
-import 'package:country_flags/country_flags.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import '../models/itinerary.dart';
-// import '../common/util.dart';
+
+// Package imports:
+import 'package:country_flags/country_flags.dart';
 import 'package:intl/intl.dart';
+
+// Project imports:
+import '../models/itinerary.dart';
+
+// import '../common/util.dart';
 
 class ItineraryCard extends StatelessWidget {
   final int itinerary_order;

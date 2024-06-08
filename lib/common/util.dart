@@ -1,12 +1,17 @@
+// Dart imports:
 import 'dart:math';
 
-import 'package:absence_watch/models/trip.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-import '../models/itinerary.dart';
-import 'package:intl/intl.dart';
+// Package imports:
 import 'package:country_pickers/country.dart';
 import 'package:country_pickers/country_pickers.dart';
+import 'package:intl/intl.dart';
+
+// Project imports:
+import 'package:absence_watch/models/trip.dart';
+import '../models/itinerary.dart';
 
 final Country ukCountry = CountryPickerUtils.getCountryByIsoCode('GB');
 

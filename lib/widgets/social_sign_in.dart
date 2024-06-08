@@ -1,9 +1,13 @@
-import 'package:absence_watch/models/profile.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 
+// Project imports:
+import 'package:absence_watch/models/profile.dart';
 import '../pages/home.dart';
 
 Future<void> _signInWithGoogle(

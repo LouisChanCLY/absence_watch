@@ -1,8 +1,13 @@
+// Dart imports:
 import 'dart:math';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+// Project imports:
 import 'trip.dart';
 
 class Profile with ChangeNotifier {

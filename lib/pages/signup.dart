@@ -1,8 +1,12 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:form_validator/form_validator.dart';
 import 'package:provider/provider.dart';
 
+// Project imports:
 import '../models/profile.dart';
 
 class SignupPage extends StatefulWidget {

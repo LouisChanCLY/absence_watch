@@ -1,15 +1,19 @@
-import 'package:absence_watch/common/theme.dart';
+// Flutter imports:
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+// Package imports:
 import 'package:country_pickers/countries.dart';
 import 'package:country_pickers/country.dart';
 import 'package:country_pickers/country_pickers.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
+// Project imports:
+import 'package:absence_watch/common/theme.dart';
 import '../common/util.dart';
 import '../models/itinerary.dart';
 import '../models/purposes.dart';
-import 'package:flutter/cupertino.dart';
 
 enum DateType {
   departure,

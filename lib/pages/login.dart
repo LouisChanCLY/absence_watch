@@ -1,9 +1,14 @@
-import 'package:absence_watch/common/theme.dart';
-import 'package:absence_watch/widgets/social_sign_in.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:form_validator/form_validator.dart';
 import 'package:provider/provider.dart';
+
+// Project imports:
+import 'package:absence_watch/common/theme.dart';
+import 'package:absence_watch/widgets/social_sign_in.dart';
 import '../models/profile.dart';
 import 'home.dart';
 import 'signup.dart';
