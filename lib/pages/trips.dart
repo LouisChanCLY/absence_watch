@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
+import 'package:absence_watch/common/theme.dart';
+import 'package:absence_watch/models/profile.dart';
 import 'package:absence_watch/pages/trip_details.dart';
 import 'package:absence_watch/widgets/bottom_navigator.dart';
 import 'package:absence_watch/widgets/trip_card.dart';
-import '../common/theme.dart';
-import '../models/profile.dart';
 
 class TripsPage extends StatefulWidget {
   const TripsPage({super.key});

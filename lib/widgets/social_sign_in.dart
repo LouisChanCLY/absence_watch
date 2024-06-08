@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 // Project imports:
 import 'package:absence_watch/models/profile.dart';
-import '../pages/home.dart';
+import 'package:absence_watch/pages/home.dart';
 
 Future<void> _signInWithGoogle(
     BuildContext context, Widget redirectPage) async {

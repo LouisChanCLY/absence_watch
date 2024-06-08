@@ -8,10 +8,10 @@ import 'package:provider/provider.dart';
 
 // Project imports:
 import 'package:absence_watch/common/theme.dart';
+import 'package:absence_watch/models/profile.dart';
+import 'package:absence_watch/pages/home.dart';
+import 'package:absence_watch/pages/signup.dart';
 import 'package:absence_watch/widgets/social_sign_in.dart';
-import '../models/profile.dart';
-import 'home.dart';
-import 'signup.dart';
 
 class LoginPage extends StatefulWidget {
   final Widget redirectPage;

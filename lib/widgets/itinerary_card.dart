@@ -6,9 +6,7 @@ import 'package:country_flags/country_flags.dart';
 import 'package:intl/intl.dart';
 
 // Project imports:
-import '../models/itinerary.dart';
-
-// import '../common/util.dart';
+import 'package:absence_watch/models/itinerary.dart';
 
 class ItineraryCard extends StatelessWidget {
   final int itineraryOrder;

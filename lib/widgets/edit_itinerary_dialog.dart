@@ -9,9 +9,9 @@ import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 // Project imports:
 import 'package:absence_watch/common/theme.dart';
-import '../common/util.dart';
-import '../models/itinerary.dart';
-import '../models/purposes.dart';
+import 'package:absence_watch/common/util.dart';
+import 'package:absence_watch/models/itinerary.dart';
+import 'package:absence_watch/models/purposes.dart';
 
 enum DateType {
   departure,

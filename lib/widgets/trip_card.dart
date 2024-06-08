@@ -6,9 +6,9 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
+import 'package:absence_watch/models/profile.dart';
+import 'package:absence_watch/models/trip.dart';
 import 'package:absence_watch/pages/trip_summary.dart';
-import '../models/profile.dart';
-import '../models/trip.dart';
 
 class TripCard extends StatelessWidget {
   final Trip trip;

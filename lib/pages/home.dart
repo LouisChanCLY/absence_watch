@@ -11,10 +11,10 @@ import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:absence_watch/common/theme.dart';
 import 'package:absence_watch/common/util.dart';
 import 'package:absence_watch/models/profile.dart';
+import 'package:absence_watch/pages/login.dart';
 import 'package:absence_watch/pages/trip_details.dart';
 import 'package:absence_watch/widgets/avatar_icon.dart';
 import 'package:absence_watch/widgets/bottom_navigator.dart';
-import 'login.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

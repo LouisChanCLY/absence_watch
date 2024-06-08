@@ -7,7 +7,7 @@ import 'package:form_validator/form_validator.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
-import '../models/profile.dart';
+import 'package:absence_watch/models/profile.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
